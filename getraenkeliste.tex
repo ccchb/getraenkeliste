@@ -1,0 +1,37 @@
+\documentclass[fontsize=14pt,a4paper]{scrartcl}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\usepackage{microtype}
+\usepackage[margin=2cm]{geometry}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{forloop}
+
+\setdefaultlanguage{german}
+
+\setmainfont{Source Serif Pro}
+\setsansfont{Source Sans Pro}
+\setmonofont{Source Code Pro}
+
+\setlength\parskip{5mm}
+
+\begin{document}
+\thispagestyle{empty}
+\centerline{\bfseries\Large Getränke-im-Voraus-bezahl-Liste}
+
+\noindent5€ in die Kasse werfen. Anschließend eigenen Namen in ein freies,
+breites Feld eintragen. Nun können durch Eintragen von fünf Kreuzen rechts neben dem
+Namen leicht fünf Getränke abgezählt werden! {\small (Nach: Discordia et al.
+2012 Facilitating the pre-payment of beverages in a self-organised sales outlet
+environment; \\\texttt{https://doi.org/10.1023/A:1010933404324})}
+
+\sffamily
+\newcounter{rows}
+\centerline\noindent\begin{tabular}[H]{|p{4cm}|c|c|c|c|c||p{4cm}|c|c|c|c|c|} \hline
+	\rowcolor{lightgray}\textbf{Name} & 1 & 2 & 3 & 4 & 5 & 
+		\textbf{Name} & 1 & 2 & 3 & 4 & 5 \\ \hline\hline
+	\forloop{rows}{0}{\value{rows} < 20}{ ~ & & & & & & & & & & & \\[3mm] \hline }
+\end{tabular}
+\end{document}
+
